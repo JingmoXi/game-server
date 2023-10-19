@@ -35,6 +35,7 @@ func (w *World) Init() {
 
 // Enter was called when new guest enter
 func (w *World) Enter(s *session.Session, msg []byte) error {
+	fmt.Printf("%s", "打印吧")
 	w.Add(s)
 	log.Println(fmt.Sprintf("session count: %d", w.Count()))
 	return s.Response(&protocol.EnterWorldResponse{ID: s.ID()})
